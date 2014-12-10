@@ -1,8 +1,18 @@
 {
   "version": "0.1.0",
+  "peerDependencies": {
+    "react": "^0.12.1"
+  },
   "devDependencies": {
-    "backbone": "^1.1.2",
-    "flux": "^2.0.1",
+    "lint-trap": "^0.4.8",
     "gulp": "^3.8.10"
+  },
+  "dependencies": {
+    "lodash.escape": "^2.4.1",
+    "lodash.random": "^2.4.1",
+    "lodash.unescape": "^2.4.1"
+  },
+  "scripts": {
+    "lint": "lint-trap"
   }
 }
