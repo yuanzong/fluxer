@@ -1,4 +1,4 @@
 fluxer
 ======
 
-Models, Collections, Utils for Flux
+Build React/Flux app that runs seamlessly on both server side and client side

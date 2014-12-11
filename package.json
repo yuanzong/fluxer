@@ -1,5 +1,11 @@
 {
+  "name": "fluxer",
   "version": "0.1.0",
+  "description": "Build React/Flux app on server side",
+  "main": "index.js",
+  "homepage": "https://github.com/yuanzong/fluxer",
+  "author": "Yuanzong Qiu <congge@gmail.com>",
+  "license": "MIT",
   "peerDependencies": {
     "react": "^0.12.1"
   },
