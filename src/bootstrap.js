@@ -1,10 +1,17 @@
 'use strict';
 
-var React = require('react');
-var escape = require('lodash.escape');
+var document = require('global/document');
+var unescape = require('lodash.unescape');
+var utils = require('./utils');
 
-var template = require('./utils/template');
+// recreate app data and container for client
+module.exports = function bootstrap(appId) {
+  var appContainer = document.getElementById(utils.getContainerId(appId));
+  var scriptContainer = document.getElementById(utils.getScriptId(appId));
+  var scriptData = unescape(scriptContainer.innerHTML);
 
-module.exports = function bootstrap(appId, App, data) {
-
+  return {
+    appContainer: appContainer,
+    appData: JSON.parse(scriptData)
+  };
 };

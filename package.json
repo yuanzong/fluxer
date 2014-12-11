@@ -9,8 +9,8 @@
   },
   "dependencies": {
     "lodash.escape": "^2.4.1",
-    "lodash.random": "^2.4.1",
-    "lodash.unescape": "^2.4.1"
+    "lodash.unescape": "^2.4.1",
+    "node-jsx": "^0.12.4"
   },
   "scripts": {
     "lint": "lint-trap"

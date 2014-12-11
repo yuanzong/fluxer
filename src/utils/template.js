@@ -7,16 +7,15 @@ var utils = require('./index');
 
 var DataScriptTemplate = React.createClass({
   propTypes: {
-    appId: React.PropTypes.string.isRequired,
-    appData: React.PropTypes.object.isRequired
+    id: React.PropTypes.string.isRequired,
+    data: React.PropTypes.object.isRequired
   },
 
   render: function render() {
-    var dataHtml = JSON.stringify(this.props.appData);
-    var scriptId = utils.getScriptId(this.props.appId);
+    var dataHtml = JSON.stringify(this.props.data);
 
     return React.createElement('script', {
-      id: scriptId,
+      id: this.props.id,
       type: 'application/json',
       dangerouslySetInnerHTML: {
         __html: escape(dataHtml)
@@ -25,28 +24,34 @@ var DataScriptTemplate = React.createClass({
   }
 });
 
-var AppMarkupTemplate = React.createClass({
+var AppTemplate = React.createClass({
   propTypes: {
     appId: React.PropTypes.string.isRequired,
-    appComponent: React.PropTypes.element.isRequired,
-    dataScript: React.PropTypes.element.isRequired
+    appData: React.PropTypes.object.isRequired,
+    component: React.PropTypes.element.isRequired
   },
 
   render: function render() {
-    var appHtml = React.renderToString(this.props.appComponent);
-    var scriptHtml = React.renderToStaticMarkup(this.props.dataScript);
-    var containerId = utils.getContainerId(this.props.appId);
+    var appId = this.props.appId;
+
+    var containerId = utils.getContainerId(appId);
+    var dataScriptId = utils.getScriptId(appId);
+
+    var DataScript = React.createElement(template.DataScript, {
+      id: dataScriptId,
+      data: this.props.appData
+    });
+
+    var appHtml = React.renderToString(this.props.component);
+    var dataScriptHtml = React.renderToStaticMarkup(DataScript);
 
     return React.createElement('div', {
       id: containerId,
       dangerouslySetInnerHTML: {
-        __html: appHtml + scriptHtml
+        __html: appHtml + dataScriptHtml
       }
     });
   }
 });
 
-module.exports = {
-  DataScript: React.createFactory(DataScriptTemplate),
-  AppMarkup: React.createFactory(AppMarkupTemplate)
-};
+module.exports = AppTemplate;
