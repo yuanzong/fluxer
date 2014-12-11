@@ -1,23 +1,23 @@
 {
   "name": "fluxer",
-  "version": "0.1.1",
+  "version": "0.1.0",
   "description": "Build React/Flux app on server side",
-  "main": "src/fluxer.js",
-  "browser": "src/fluxer.client.js",
+  "main": "lib/server.js",
+  "browser": "lib/browser.js",
   "homepage": "https://github.com/yuanzong/fluxer",
   "author": "Yuanzong Qiu <congge@gmail.com>",
   "license": "MIT",
   "peerDependencies": {
-    "react": "^0.12.1"
+    "react": "^0.12.1",
+    "node-jsx": "^0.12.4"
   },
   "devDependencies": {
-    "lint-trap": "^0.4.8",
-    "gulp": "^3.8.10"
+    "gulp": "^3.8.10",
+    "lint-trap": "^0.4.9"
   },
   "dependencies": {
     "lodash.escape": "^2.4.1",
-    "lodash.unescape": "^2.4.1",
-    "node-jsx": "^0.12.4"
+    "lodash.unescape": "^2.4.1"
   },
   "scripts": {
     "lint": "lint-trap"
