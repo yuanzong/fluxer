@@ -1,6 +1,6 @@
 {
   "name": "fluxer",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Build React/Flux app for both server and client side",
   "keywords": "React, Flux, fluxer",
   "main": "lib/index.js",
