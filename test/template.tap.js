@@ -5,8 +5,8 @@ var tape = require('tape');
 
 var Template = require('../lib/utils/template');
 
-var Component = require('./app-component');
-var data = require('./app-data');
+var Component = require('./app');
+var data = require('./data');
 
 tape('Template', function test(assert) {
   var app = React.createElement(Template, {

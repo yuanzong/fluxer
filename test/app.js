@@ -4,11 +4,12 @@ var React = require('react');
 
 module.exports = React.createClass({
   propTypes: {
-    name: React.PropTypes.string.isRequired
+    name: React.PropTypes.string.isRequired,
+    email: React.PropTypes.string.isRequired
   },
 
   render: function render() {
-    var content = 'Hello ' + this.props.name;
+    var content = this.props.name + ', ' + this.props.email;
     return React.createElement('h1', null, content);
   }
 });
