@@ -14,6 +14,7 @@ var data: DataNeededToInitialize appComponent
 
 #### server side
 
+
 ``` js
 var fluxer = require('fluxer');
 var markup = fluxer(appName, appComponent, data)
@@ -31,6 +32,7 @@ place markup in your favorite template, markup has format like this
 ```
 
 #### client side
+
 
 ``` js
 var fluxer = require('fluxer')(document);
