@@ -41,11 +41,13 @@ var appCtx = fluxer(appName, appComponent)
 
 appCtx has format like this
 
+``` json
 {
   app: ReactElement created from appComponent and data,
   data: original data object from server side
   mountNode: dom element to mount app
 }
+```
 
 typically you will simply call
 
