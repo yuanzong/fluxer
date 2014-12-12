@@ -14,7 +14,7 @@ var scriptId = utils.getScriptId(appName);
 
 var escape = require('lodash.escape');
 
-tape('bootstrap on the server side', function test(assert) {
+tape('server side bootstrap', function test(assert) {
   assert.throws(server, /appName/, 'appName is required');
   assert.throws(server.bind(this, appName));
 
