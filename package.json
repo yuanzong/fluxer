@@ -27,7 +27,7 @@
   },
   "scripts": {
     "lint": "lint-trap --line-length 120",
-    "cover": "NODE_ENV=test istanbul cover --report cobertura --report html --print detail tape -- test/*.tap.js",
+    "cover": "NODE_ENV=test istanbul cover --report cobertura --report html --print detail tape -- 'test/*.tap.js'",
     "test": "npm run lint && npm run cover"
   }
 }
