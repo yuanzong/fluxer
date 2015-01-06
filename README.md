@@ -1,6 +1,8 @@
 Fluxer
 ======
 
+[![Build Status](https://travis-ci.org/yuanzong/fluxer.svg?branch=master)](https://travis-ci.org/yuanzong/fluxer)
+
 Build React/Flux app that runs seamlessly on both server side and client side
 
 Usage
