@@ -1,8 +1,8 @@
 'use strict';
 
-var React = require('react');
 var dom = require('jsdom');
-var escape = require('lodash.escape');
+var React = require('react');
+var serialize = require('serialize-javascript');
 var tape = require('tape');
 
 var App = require('./app');
@@ -35,7 +35,7 @@ tape('server renders react component', function test(assert) {
 
   assert.ok($dataScript, 'has data script element');
   assert.equal($dataScript.tagName, 'SCRIPT');
-  assert.equal($dataScript.innerHTML, escape(JSON.stringify(data)));
+  assert.equal($dataScript.innerHTML, serialize(data));
 
   assert.end();
 });
