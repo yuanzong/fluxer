@@ -41,19 +41,31 @@ var fluxer = require('fluxer')(document);
 fluxer.render(appName, Component);
 ```
 
-### with React-router
+#### with [react-router](https://github.com/rackt/react-router)
 
 ```js
 
-// on server side
-var fluxer = require('fluxer');
+// define your routes
 
-Router.run(Routes, req.url, function(Handler) {
-  res.send(fluxer(appName, Handler, props));
+var routes = (
+  <Route handler={appComponent} path="/">
+);
+
+
+// on server side
+
+var fluxer = require('fluxer');
+var Router = require('react-router');
+
+Router.run(routes, url, function(Handler) {
+  res.send(fluxer(appName, Handler, data));
 });
 
+
 // on client side
+
 var fluxer = require('fluxer')(document);
+var Router = require('react-router');
 
 var initData = fluxer.getInitData(appName);
 var mountNode = fluxer.getMountNode(appName);
