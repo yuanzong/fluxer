@@ -28,7 +28,7 @@ place markup in your favorite template, markup has format like this
 <div id='{appName}-container'>
   React rendered appComponent
   <script type='application/json' id='{appName}-data-script'>
-    html escaped, json.stringify(data)
+    json serialized data
   </script>
 </div>
 ```
@@ -38,23 +38,14 @@ place markup in your favorite template, markup has format like this
 
 ``` js
 var fluxer = require('fluxer')(document);
-var appCtx = fluxer(appName, appComponent)
 ```
 
-appCtx has format like this
+fluxer has the following interface
 
 ``` js
-{
-  app: ReactElement created from appComponent and data,
-  data: original data object from server side
-  mountNode: dom element to mount app
-}
-```
-
-typically you will simply call
-
-``` js
-React.render(appCtx.app, appCtx.mountNode);
+getMountNode(appName): dom element to mount app
+getInitData(appName): original data object from server side
+render(appName, Component): recreate the app
 ```
 
 # install

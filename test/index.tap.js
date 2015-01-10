@@ -41,9 +41,15 @@ tape('server renders react component', function test(assert) {
 });
 
 tape('bootstrap app from server rendered html', function test(assert) {
-  var ctx = browser(document)(data.name, App);
-  assert.deepEqual(ctx.data, data, 'recovers app data');
-  assert.equal(ctx.mountNode, $container, 'mountNode is container element');
-  assert.ok(React.isValidElement(ctx.app), 'successfully recreate React app');
+  var fluxer = browser(document);
+
+  var initData = fluxer.getInitData(data.name);
+  var mountNode = fluxer.getMountNode(data.name);
+  var app = React.createElement(App, initData);
+
+  assert.deepEqual(initData, data, 'recovers app data');
+  assert.equal(mountNode, $container, 'mountNode is container element');
+  assert.ok(React.isValidElement(app), 'successfully recreate React app');
+
   assert.end();
 });
