@@ -38,14 +38,29 @@ place markup in your favorite template, markup has format like this
 
 ``` js
 var fluxer = require('fluxer')(document);
+fluxer.render(appName, Component);
 ```
 
-fluxer has the following interface
+### with React-router
 
-``` js
-getMountNode(appName): dom element to mount app
-getInitData(appName): original data object from server side
-render(appName, Component): recreate the app
+```js
+
+// on server side
+var fluxer = require('fluxer');
+
+Router.run(Routes, req.url, function(Handler) {
+  res.send(fluxer(appName, Handler, props));
+});
+
+// on client side
+var fluxer = require('fluxer')(document);
+
+var initData = fluxer.getInitData(appName);
+var mountNode = fluxer.getMountNode(appName);
+
+Router.run(Routes, Router.HistoryLocation, function(Handler) {
+  React.render(<Handler ...initData />, mountNode);
+});
 ```
 
 # install
