@@ -13,13 +13,13 @@
   "license": "MIT",
   "devDependencies": {
     "gulp": "^3.8.10",
-    "istanbul": "^0.3.5",
+    "istanbul": "^0.3.13",
     "jsdom": "^1.4.1",
     "lint-trap": "^0.4.10",
-    "tape": "^3.0.3"
+    "tape": "^4.0.0"
   },
   "dependencies": {
-    "react": "^0.12.2",
+    "react": ">=0.12.2 <0.14.0",
     "serialize-javascript": "^1.0.0"
   },
   "scripts": {
