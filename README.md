@@ -27,10 +27,10 @@ place markup in your favorite template, markup has format like this
 ``` html
 <div id='{appName}-container'>
   React rendered appComponent
-  <script type='application/json' id='{appName}-data-script'>
-    json serialized data
-  </script>
 </div>
+<script type='application/json' id='{appName}-data-script'>
+  json serialized data
+</script>
 ```
 
 #### client side
