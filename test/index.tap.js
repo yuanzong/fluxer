@@ -14,9 +14,9 @@ var utils = require('../lib/utils');
 
 tape('server validation', function test(assert) {
   assert.throws(server, /appName/, 'appName is required');
-  assert.throws(server.bind(this, data.name));
-  assert.doesNotThrow(server.bind(this, data.name, 'div'));
-  assert.doesNotThrow(server.bind(this, data.name, App, data));
+  assert.throws(server.bind(null, data.name));
+  assert.doesNotThrow(server.bind(null, data.name, 'div'));
+  assert.doesNotThrow(server.bind(null, data.name, App, data));
   assert.end();
 });
 
