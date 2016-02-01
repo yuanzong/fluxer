@@ -53,3 +53,19 @@ tape('bootstrap app from server rendered html', function test(assert) {
 
   assert.end();
 });
+
+document = dom.jsdom(server(data.name, App, data, {disableServerRender: true}));
+$container = document.getElementById(containerId);
+$dataScript = document.getElementById(dataScriptId);
+
+tape('can disabl server-side rendering', function test(assert) {
+  assert.ok($container, 'has container element');
+  assert.equal($container.tagName, 'DIV');
+  assert.equal($container.innerHTML, '', 'renders empty div');
+
+  assert.ok($dataScript, 'has data script element');
+  assert.equal($dataScript.tagName, 'SCRIPT');
+  assert.equal($dataScript.innerHTML, serialize(data));
+
+  assert.end();
+});
